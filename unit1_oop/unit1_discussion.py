@@ -83,6 +83,7 @@ def demonstrate_namespaces():
     # two objects
     child1 = ChildClass("DJ", 16, ["Pink", "Blue"], "A")
     child2 = ChildClass("San", 15, ["Yellow", "Purple", "Red"], "C")
+    child3 = ChildClass("Laye", 10, [], "B")
 
     #Class varible
     print("Category: ", ChildClass.category)
@@ -98,6 +99,11 @@ def demonstrate_namespaces():
     print()
     print("Child2 namespace: ")
     print(child2.__dict__)
+
+#test
+    print()
+    print("Child3 namespace: ")
+    print(child3.__dict__)
 
     print()
     print("ChildClass namespace: ")

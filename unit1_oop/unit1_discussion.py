@@ -25,7 +25,17 @@ from copy import copy, deepcopy
 # Replace the pass statement with your implementation.
 
 class ParentClass:
-    pass
+    # one variable
+    category = "Parent"
+    #constructor with two instance variables
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    #method
+    def display_info(self):
+        return f"Name: {self.name}, Age: {self.age}"
+
 
 
 # TODO 2:
@@ -41,7 +51,20 @@ class ParentClass:
 # Replace the pass statement with your implementation.
 
 class ChildClass(ParentClass):
-    pass
+    category = "Child"
+
+    def __init__(self, name, age, colors, grade):
+        super().__init__(name, age)
+
+        self.colors = colors
+        self.grade = grade
+    #method
+    def display_colors(self):
+        return f"Hobbies: {self.colors}"
+
+    #override method
+    def display_info(self):
+        return (f"Name: {self.name}, Age: {self.age}, Favorite colors: {self.colors}, Grade: {self.grade}")
 
 
 # TODO 3:
@@ -57,7 +80,29 @@ class ChildClass(ParentClass):
 
 def demonstrate_namespaces():
     print("\n=== Namespace Demonstration ===")
-    print("TODO: Implement namespace demonstration")
+    # two objects
+    child1 = ChildClass("DJ", 16, ["Pink", "Blue"], "A")
+    child2 = ChildClass("San", 15, ["Yellow", "Purple", "Red"], "C")
+
+    #Class varible
+    print("Category: ", ChildClass.category)
+    # access same variable through object
+    print("Child 1 category: ", child1.category)
+    # add new attribute
+    child1.height = "5'5"
+    #display
+    print()
+    print("Child1 namespace: ")
+    print(child1.__dict__)
+
+    print()
+    print("Child2 namespace: ")
+    print(child2.__dict__)
+
+    print()
+    print("ChildClass namespace: ")
+    print(ChildClass.__dict__)
+
 
 
 # TODO 4:
@@ -73,7 +118,23 @@ def demonstrate_namespaces():
 
 def demonstrate_copying():
     print("\n=== Copy Demonstration ===")
-    print("TODO: Implement shallow copy and deep copy demonstration")
+
+    #object with nested mutable data
+    original = {"name": "DJ", "scores": [95, 90, 98]}
+
+    #shallow copy
+    shallow_copy = copy(original)
+
+    #deep copy
+    deep_copy = deepcopy(original)
+
+    #modify original
+    original["scores"].append(100)
+
+    #display all
+    print("\nOriginal: ", original)
+    print("\nShallow copy: ", shallow_copy)
+    print("\nDeep copy: ", deep_copy)
 
 
 # TODO 5:
@@ -89,9 +150,18 @@ def demonstrate_copying():
 def main():
     print("=== Unit 1 OOP Assignment ===")
 
-    print("\nTODO: Create and test your parent object")
+    print()
+    print("Parent:")
+    parent = ParentClass("Lucy", 40)
+    print(parent.display_info())
+    print("Category:", parent.category)
 
-    print("\nTODO: Create and test your child object")
+    print("\nChild:")
+    child = ChildClass ("Psylocke", 17, ["Pink", "Mauve"], "A")
+    print(child.display_info())
+    print(child.display_colors())
+    print("Category: ", child.category)
+
 
     demonstrate_namespaces()
     demonstrate_copying()

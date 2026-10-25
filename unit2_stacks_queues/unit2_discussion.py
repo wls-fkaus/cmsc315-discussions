@@ -155,6 +155,7 @@ print("True or False, is the single-item stack empty?", stack_single.is_empty())
 print("\n=== QUEUE DEMO ===")
 # TODO: Create a Queue object, demonstrate FIFO behavior
 
+
 queue = Queue()
 
 print("Add four people to queue:")

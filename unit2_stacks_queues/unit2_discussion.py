@@ -110,29 +110,29 @@ def main():
 print("\n=== STACK DEMO ===")
 
 stack = Stack()
-print("Adding 4 values to stack: ")
-for value in [10, 20, 30, 40]:
+print("Adding 4 items to stock: ")
+for value in [1, 2, 3, 4]:
     stack.push(value)
     print("Pushed:", value)
 
-print("Top value using peek(): ", stack.peek())
+print("Top item using peek(): ", stack.peek())
 print("\nRemoving values to show an example of LIFO:")
 
 while not stack.is_empty():
     print("Popped: ", stack.pop())
 
-print("True or False, is the stack empty? ", stack.is_empty())
+print("True or False, is the row empty? ", stack.is_empty())
 
-print("      test popping from an empty stack, (removing values)")
+print("      test popping from an empty row, (removing values)")
 print("      ", stack.pop())
 
-print("      test peeking at an empty stack, (show top value)")
+print("      test peeking at an empty row, (show top value)")
 print("      ", stack.peek())
 
-print("      and verify a single-item stack becomes empty after removal.")
+print("      and verify a single-item row becomes empty after removal.")
 
 stack_single = Stack()
-stack_single.push(100)
+stack_single.push(1)
 print("\nSingle-item stack was created with:", stack_single.peek())
 print("Removed the single item:", stack_single.pop())
 print("True or False, is the single-item stack empty?", stack_single.is_empty())
@@ -157,13 +157,13 @@ print("\n=== QUEUE DEMO ===")
 
 queue = Queue()
 
-print("Add four values to queue:")
-for value in [10, 20, 30 , 40]:
+print("Add four people to queue:")
+for value in ["Sarah", "John", "Patrick", "Lilly"]:
     queue.enqueue(value)
     print("Enqueued:", value)
 
-print("Front value using front():", queue.front())
-print("\nRemove values to demonstrate FIFO behavior")
+print("Front person using front():", queue.front())
+print("\nRemove people from queue to demonstrate FIFO behavior")
 while not queue.is_empty():
     print("Dequeued:", queue.dequeue())
 
@@ -175,13 +175,13 @@ print("      ", queue.dequeue())
 print("      test viewing the front of an empty queue, ()")
 print("      ", queue.front())
 
-print("      and verify a single-item queue becomes empty after removal.")
+print("      and verify a single-person queue becomes empty after removal.")
 
 queue_single = Queue()
 queue_single.enqueue(100)
-print("\nSingle-item queue has the single value with:", queue_single.front())
-print("Removed the single item:", queue_single.dequeue())
-print("True or False, is the single-item queue empty?", queue_single.is_empty())
+print("\nSingle-person queue has the single value with:", queue_single.front())
+print("Removed the single-person:", queue_single.dequeue())
+print("True or False, is the single-person queue empty?", queue_single.is_empty())
 
 if __name__ == "__main__":
     main()

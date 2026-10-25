@@ -41,7 +41,7 @@ class Stack:
         # TODO (Student): Return the top value without removing it.
         # Add a comment explaining what peek does.
         
-        # Peek will reutnr the top value without removing it
+        # Peek will return the top value without removing it
         if self.is_empty():
             return None
         return self.items[-1]
@@ -108,10 +108,34 @@ def main():
 
 
 print("\n=== STACK DEMO ===")
-print("TODO: Create a Stack object, demonstrate LIFO behavior,")
-print("      test popping from an empty stack,")
-print("      test peeking at an empty stack,")
+
+stack = Stack()
+print("Adding 4 values to stack: ")
+for value in [10, 20, 30, 40]:
+    stack.push(value)
+    print("Pushed:", value)
+
+print("Top value using peek(): ", stack.peek())
+print("\nRemoving values to show an example of LIFO:")
+
+while not stack.is_empty():
+    print("Popped: ", stack.pop())
+
+print("True or False, is the stack empty? ", stack.is_empty())
+
+print("      test popping from an empty stack, (removing values)")
+print("      ", stack.pop())
+
+print("      test peeking at an empty stack, (show top value)")
+print("      ", stack.peek())
+
 print("      and verify a single-item stack becomes empty after removal.")
+
+stack_single = Stack()
+stack_single.push(100)
+print("\nSingle-item stack was created with:", stack_single.peek())
+print("Removed the single item:", stack_single.pop())
+print("True or False, is the single-item stack empty?", stack_single.is_empty())
 
 # ===============================
 # TODO (Student): QUEUE DEMO
@@ -129,10 +153,35 @@ print("      and verify a single-item stack becomes empty after removal.")
 #    and verify the queue is empty afterward.
 
 print("\n=== QUEUE DEMO ===")
-print("TODO: Create a Queue object, demonstrate FIFO behavior,")
-print("      test dequeuing from an empty queue,")
-print("      test viewing the front of an empty queue,")
+# TODO: Create a Queue object, demonstrate FIFO behavior
+
+queue = Queue()
+
+print("Add four values to queue:")
+for value in [10, 20, 30 , 40]:
+    queue.enqueue(value)
+    print("Enqueued:", value)
+
+print("Front value using front():", queue.front())
+print("\nRemove values to demonstrate FIFO behavior")
+while not queue.is_empty():
+    print("Dequeued:", queue.dequeue())
+
+print("True or False, is the queue empty?", queue.is_empty)
+
+print("      test dequeuing from an empty queue, ()")
+print("      ", queue.dequeue())
+
+print("      test viewing the front of an empty queue, ()")
+print("      ", queue.front())
+
 print("      and verify a single-item queue becomes empty after removal.")
+
+queue_single = Queue()
+queue_single.enqueue(100)
+print("\nSingle-item queue has the single value with:", queue_single.front())
+print("Removed the single item:", queue_single.dequeue())
+print("True or False, is the single-item queue empty?", queue_single.is_empty())
 
 if __name__ == "__main__":
     main()

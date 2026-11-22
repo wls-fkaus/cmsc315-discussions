@@ -30,3 +30,9 @@ Your reflection should be approximately 150–200 words and address the followin
 1. What concepts or skills did you learn while completing this assignment?
 2. What challenges did you encounter, and how did you overcome them?
 3. Explain how hash tables behave, what collisions are, and how hash tables can improve efficiency.
+
+I made an dictionary called student_courses and added some courses with it's corresponding numbers. There were 5 pairs added and printed.
+To lookup I would provide a key and the dictionary would return the value that it's paired up 
+The update section will change the course associated witht eh student ID 1002. I assigned a new value to an existing key without creating a new key.
+To delete I used the del statement to remove a student ID 1003 with the course connected to it without changing the entire dictionary. 
+
